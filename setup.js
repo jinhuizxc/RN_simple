@@ -22,13 +22,16 @@ export default class RN_simple extends Component {
         })
     }
 
+    // ES6: 延展操作符... 用于传递属性  <PropsTest {...params}/>
     render() {
-
+        const params = {name: '小李', age: 18, sex: '男'};
+        // 解构赋值
+        const {name, sex} = params;
         return (
             <View style={styles.container}>
                 <PropsTest
-                 name = "小明"
-                 sex = '男'
+                    name={name}
+                    sex={sex}
                 />
             </View>
         );
