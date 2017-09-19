@@ -9,14 +9,15 @@ import {
 } from 'react-native';
 import HelloComponent from './HelloComponent'
 import LifeCycle from './LifeCycle'
-import EIComponent, {name, age} from './EIComponent'
+import EIComponent, {name, age, sum} from './EIComponent'
 
 export default class RN_simple extends Component {
 
     constructor(props) {
         super(props);
         this.state = ({
-            remove: false
+            remove: false,
+            result: '',
         })
     }
 
@@ -27,6 +28,13 @@ export default class RN_simple extends Component {
 
                 <Text style={{fontSize: 20}}>名字：{name}</Text>
                 <Text style={{fontSize: 20}}>年龄：{age}</Text>
+                <Text style={{fontSize: 20}}
+                      onPress={()=> {
+                          const result = sum(2, 3);
+                          this.setState({
+                              result: result,
+                      })
+                      }}>2 + 3 ={this.state.result}</Text>
             </View>
         );
     }
