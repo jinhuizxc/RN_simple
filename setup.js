@@ -10,6 +10,7 @@ import {
 import HelloComponent from './HelloComponent'
 import LifeCycle from './LifeCycle'
 import EIComponent, {name, age, sum} from './EIComponent'
+import PropsTest from './PropsTest'
 
 export default class RN_simple extends Component {
 
@@ -25,16 +26,10 @@ export default class RN_simple extends Component {
 
         return (
             <View style={styles.container}>
-
-                <Text style={{fontSize: 20}}>名字：{name}</Text>
-                <Text style={{fontSize: 20}}>年龄：{age}</Text>
-                <Text style={{fontSize: 20}}
-                      onPress={()=> {
-                          const result = sum(2, 3);
-                          this.setState({
-                              result: result,
-                      })
-                      }}>2 + 3 ={this.state.result}</Text>
+                <PropsTest
+                 name = "小明"
+                 sex = '男'
+                />
             </View>
         );
     }
