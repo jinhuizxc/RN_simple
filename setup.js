@@ -11,8 +11,10 @@ import HelloComponent from './HelloComponent'
 import LifeCycle from './LifeCycle'
 import EIComponent, {name, age, sum} from './EIComponent'
 import PropsTest from './PropsTest'
+import StateTest from './StateTest'
 
 export default class RN_simple extends Component {
+
 
     constructor(props) {
         super(props);
@@ -22,16 +24,11 @@ export default class RN_simple extends Component {
         })
     }
 
-    // ES6: 延展操作符... 用于传递属性  <PropsTest {...params}/>
     render() {
-        const params = {name: '小李', age: 18, sex: '男'};
-        // 解构赋值
-        const {name, sex} = params;
+
         return (
             <View style={styles.container}>
-                <PropsTest
-                    name={name}
-                    sex={sex}
+                <StateTest
                 />
             </View>
         );
