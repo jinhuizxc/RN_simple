@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+/**
+ * 组件的加载与卸载
+ */
+import React, {Component} from 'react';
 import {
     StyleSheet,
     Text,
@@ -6,28 +9,24 @@ import {
 } from 'react-native';
 import HelloComponent from './HelloComponent'
 import LifeCycle from './LifeCycle'
+import EIComponent, {name, age} from './EIComponent'
+
 export default class RN_simple extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = ({
             remove: false
         })
     }
+
     render() {
-        let view = this.state.remove ? null : <LifeCycle/>;
-        let text = this.state.remove ? "加载组件" : '卸载组件';
+
         return (
             <View style={styles.container}>
-                {/*<HelloComponent*/}
-                {/*name = "小明"/>*/}
-              <Text style={{fontSize:20}}
-              onPress={()=>{
-                  this.setState({
-                     remove:!this.state.remove
-                  })
-              }}>{text}</Text>
-                {view}
+
+                <Text style={{fontSize: 20}}>名字：{name}</Text>
+                <Text style={{fontSize: 20}}>年龄：{age}</Text>
             </View>
         );
     }
